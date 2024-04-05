@@ -1,5 +1,7 @@
 const db = require("./banco")
 
+
+
 const Agendamentos = db.sequelize.define("agendamentos",{
     nome:{
         type: db.Sequelize.STRING
@@ -18,6 +20,6 @@ const Agendamentos = db.sequelize.define("agendamentos",{
     }
 })
 
-Agendamentos.sync({force: true})
+//Agendamentos.sync({force: true})
 
 module.exports = Agendamentos

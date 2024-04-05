@@ -41,9 +41,22 @@ app.get("/consultar", function(req, res){
   
 })
 
-app.get("/atualizar", function(req, res){
-    res.render("atualizar")
+
+app.post("/atualizar", function(req, res){
+    post.create({
+        nome: req.body.nome,
+        telefone: req.body.telefone,
+        origem: req.body.origem,
+        data_contato: req.body.data_contato,
+        observacao: req.body.observacao
+    }, {where: {id:res.body.id}}).then(function(){
+        res.redirect("/")
+    }).catch(function(erro){
+        res.send("Falha ao cadastrar os dados: " + erro)
+    })
 })
-app.listen(8081,function(){
-    console.log("Servidor Ativo!")
-})
+
+app.get("/excluir/:id"), function(req,res)
+{
+    post.destroy
+}

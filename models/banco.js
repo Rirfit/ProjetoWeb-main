@@ -4,6 +4,7 @@ const sequelize = new Sequelize("sistemaweb", "root", "", {
     dialect: "mysql"
 })
 
+
 module.exports = {
     Sequelize: Sequelize,
     sequelize: sequelize
